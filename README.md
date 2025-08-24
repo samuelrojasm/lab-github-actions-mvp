@@ -27,8 +27,8 @@ Aquí guardo pruebas, errores, descubrimientos y notas de aprendizaje, sin preoc
     echo "Esto es un archivo de prueba." > archivo_normal.txt
     ```
 2. Archivo "Malo":
-    - Archivo que contiene la palabra **"secreto"** en su nombre para probar que la acción falle. 
-    - No lo subimos al repositorio al principio de la prueba. Esto en un paso posterior para demostrar el flujo completo.
+- Archivo que contiene la palabra **"secreto"** en su nombre para probar que la acción falle. 
+- No lo subimos al repositorio al principio de la prueba. Esto en un paso posterior para demostrar el flujo completo.
     ```bash
     echo "Esto es un archivo de prueba secreto." > archivo_secreto.txt
     ```
