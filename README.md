@@ -90,7 +90,11 @@ Ahora que todo está configurado, vamos a demostrar que funciona.
         <p align="center">
             <img src="imagenes/validar-falla.png" alt="validar-falla" width="80%">
         </p>
-    
+    - Llega el correo incando la falla del workflow de GitHub Actions
+         <p align="center">
+            <img src="imagenes/ mensaje-correo.png" alt="mensaje-correo" width="80%">
+        </p>
+        
 ## ⚡ Mejoras posibles de este Minimum Viable Product
 
 ---
