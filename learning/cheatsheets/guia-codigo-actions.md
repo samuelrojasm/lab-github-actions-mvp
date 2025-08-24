@@ -2,7 +2,7 @@
 
 ### Estructura del flujo de trabajo o workflow
 
-| :Condición de Ejecución             | :Descripción                                                           |
+|:Condición de Ejecución              |:Descripción                                                           |
 |-------------------------------------|-----------------------------------------------------------------------|
 | `name: Validar Nombres de Archivos` | Es el nombre visible de tu flujo de trabajo en GitHub.                |
 | `on: push`                          | Esta acción se activará cada vez que se haga un `push` al repositorio.|
@@ -13,7 +13,7 @@
 ### Sección Steps del job
 `steps`: Define los pasos que el job seguirá.
 
-|: Steps                        | :Descripción     |
+|:Steps                         |:Descripción    |
 |:------------------------------|:---------------|
 | `actions/checkout@v4`         |Un paso común que "saca" los archivos del repositorio para que la acción pueda trabajar con ellos. Es una acción pre-construida de GitHub.|                                                                    
 | `name: Validar nombres`       |El nombre del paso que se mostrará en los logs.|                                                                       
