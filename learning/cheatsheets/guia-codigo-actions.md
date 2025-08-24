@@ -17,7 +17,7 @@
 |------------------------------|-----------------------------------------------------------------------|
 | `actions/checkout@v4`        |Un paso común que "saca" los archivos del repositorio para que la acción pueda trabajar con ellos. Es una acción pre-construida de GitHub.|                                                                    
 | `name: Validar nombres`      |El nombre del paso que se mostrará en los logs.|                                                                       
-| `run: |`                     |Indica que este paso ejecutará comandos de shell.|    
+| `run: \|`                    |Indica que este paso ejecutará comandos de shell.|    
 | `find . -name "*secreto*"`   |El comando busca recursivamente en el directorio actual (.) archivos que contengan la palabra "secreto" en su nombre.|
 | `if [ -n "$ARCHIVOS_MALOS" ]`|Comprueba si la variable ARCHIVOS_MALOS tiene contenido (es decir, si se encontró algún archivo).|    
 | `exit 1`                     |Si se encuentra un archivo "malo", este comando hace que el trabajo falle. Si no se encuentra, el trabajo termina con éxito automáticamente.|    
