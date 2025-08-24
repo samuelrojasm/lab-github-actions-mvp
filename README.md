@@ -58,10 +58,10 @@ Ahora que todo está configurado, vamos a demostrar que funciona.
     - Verificar en GitHub: En el repositorio en GitHub hacer clic en la pestaña **Actions.**
     - Muestra que se está ejecutando un flujo de trabajo llamado **"Validar Nombres de Archivos".**
         <p align="center">
-            <img src="imagenes/workflow-run-paso1.png" alt="workflow-run-paso1" width="80%">
+            <img src="imagenes/workflow-run-paso1.png" alt="workflow-run-paso1" width="90%">
         </p>
         <p align="center">
-            <img src="imagenes/workflow-run-paso1_2000.png" alt="workflow-run-paso1-2000" width="80%">
+            <img src="imagenes/workflow-run-paso1_2000.png" alt="workflow-run-paso1-2000" width="90%">
         </p>
     - Cuando termina, debería mostrar un ícono verde de éxito. 
         <p align="center">
