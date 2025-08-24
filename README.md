@@ -57,7 +57,13 @@ Ahora que todo está configurado, vamos a demostrar que funciona.
         ```
     - Verificar en GitHub: En el repositorio en GitHub hacer clic en la pestaña **Actions.**
     - Muestra que se está ejecutando un flujo de trabajo llamado **"Validar Nombres de Archivos".**
+        <p align="center">
+            <img src="imagenes/workflow-run-paso1.png" alt="workflow-run-paso1" width="70%">
+        </p>
     - Cuando termina, debería mostrar un ícono verde de éxito. 
+        <p align="center">
+            <img src="imagenes/workflow-run-paso1-end.png" alt="workflow-run-paso1-end" width="70%">
+        </p>
     - Hacer clic para ver los logs y confirmar que el paso **"Validar nombres"** se ejecutó con éxito.
 - **Paso 2:** Demostración de Falla Intencional
     - Ahora, crear el archivo que hará que la acción falle. Si lo borramos, lo volmemos a crear.
