@@ -24,5 +24,5 @@
 
 |Steps|Descripción|
 |:----|:----------|
-|find . -name "\*secreto\*"|El comando busca recursivamente en el directorio actual (.) archivos que contengan la palabra "secreto" en su nombre.|
+|`find . -name "\*secreto\*"`|El comando busca recursivamente en el directorio actual (.) archivos que contengan la palabra "secreto" en su nombre.|
 |if [ -n "$AECHIVOS_MALOS" ]|El comando busca recursivamente en el directorio actual (.) archivos que contengan la palabra "secreto" en su nombre.|
