@@ -79,8 +79,17 @@ Ahora que todo está configurado, vamos a demostrar que funciona.
         ```
     - Verificar en GitHub: Regresar a la pestaña Actions. 
     - Se observa un nuevo flujo de trabajo en ejecución. 
+         <p align="center">
+            <img src="imagenes/workflow-run-paso2.png" alt="workflow-run-paso2" width="90%">
+        </p>
     - Esta vez, cuando termina, mostrará un ícono rojo de falla.
+         <p align="center">
+            <img src="imagenes/workflow-run-paso2-end.png" alt="workflow-run-paso2-end" width="80%">
+        </p>
     - Hacar clic para verifcar que el paso **"Validar nombres"** es el que falló, mostrando el mensaje de error que se definió.
+        <p align="center">
+            <img src="imagenes/validar-falla.png" alt="validar-falla" width="80%">
+        </p>
     
 ## ⚡ Mejoras posibles de este Minimum Viable Product
 
