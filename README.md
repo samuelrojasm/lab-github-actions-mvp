@@ -16,10 +16,12 @@ Aquí guardo pruebas, errores, descubrimientos y notas de aprendizaje, sin preoc
 - Esto es un ejemplo simple, pero útil para demostrar el flujo de trabajo de una acción.
 
 ## ⚙ Tecnolgías usadas
+- GitHub Actions
+- Shell Script
 
-## 🛠 Bloques de construcción - 
+## 🛠 Bloques de construcción (building blocks-the basic things that are put together to make something exist)
 1. Archivo de Demostración: 
-- Enla carpeta raíz del repositorio existe el archivo: **archivo_normal.txt**
+- En la carpeta raíz del repositorio existe el archivo: **archivo_normal.txt**
 - Es un archivo de texto simple. Este será el archivo que nuestra acción inspeccionará.
     ```bash
     echo "Esto es un archivo de prueba." > archivo_normal.txt
