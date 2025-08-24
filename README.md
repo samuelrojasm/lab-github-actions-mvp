@@ -65,9 +65,9 @@ Ahora que todo está configurado, vamos a demostrar que funciona.
         </p>
     - Cuando termina, debería mostrar un ícono verde de éxito. 
         <p align="center">
-            <img src="imagenes/workflow-run-paso1-end.png" alt="workflow-run-paso1-end" width="80%">
+            <img src="imagenes/workflow-run-paso1-end.png" alt="workflow-run-paso1-end" width="90%">
         </p>
-        
+
     - Hacer clic para ver los logs y confirmar que el paso **"Validar nombres"** se ejecutó con éxito.
 - **Paso 2:** Demostración de Falla Intencional
     - Ahora, crear el archivo que hará que la acción falle. Si lo borramos, lo volmemos a crear.
