@@ -60,9 +60,6 @@ Ahora que todo está configurado, vamos a demostrar que funciona.
         <p align="center">
             <img src="imagenes/workflow-run-paso1.png" alt="workflow-run-paso1" width="90%">
         </p>
-        <p align="center">
-            <img src="imagenes/workflow-run-paso1_2000.png" alt="workflow-run-paso1-2000" width="90%">
-        </p>
     - Cuando termina, debería mostrar un ícono verde de éxito. 
         <p align="center">
             <img src="imagenes/workflow-run-paso1-end.png" alt="workflow-run-paso1-end" width="90%">
