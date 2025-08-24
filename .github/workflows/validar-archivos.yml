@@ -1,0 +1,26 @@
+name: Validar Nombres de Archivos
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  validar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout del repositorio
+        uses: actions/checkout@v4
+
+      - name: Validar nombres
+        run: |
+          # Encuentra archivos con "secreto" en su nombre, excluyendo el archivo YAML de la acción
+          ARCHIVOS_MALOS=$(find . -name "*secreto*" -not -path "./.github/workflows/*")
+
+          if [ -n "$ARCHIVOS_MALOS" ]; then
+            echo "¡Error! Se encontraron archivos con la palabra 'secreto' en su nombre:"
+            echo "$ARCHIVOS_MALOS"
+            exit 1 # Falla el job
+          else
+            echo "¡Éxito! No se encontraron archivos con la palabra 'secreto'."
+          fi
