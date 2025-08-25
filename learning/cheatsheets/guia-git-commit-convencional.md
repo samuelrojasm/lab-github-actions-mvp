@@ -57,14 +57,19 @@
 ## ⚙️ Paso a paso para un commit completo
 - La sintaxis de `git commit -m` solo te permite escribir una línea de mensaje, lo cual es ideal para mensajes simples. Sin embargo, para incluir un cuerpo de mensaje y dejar la línea en blanco, se usa un método diferente.
 - La forma correcta de hacerlo desde la línea de comandos es no usar la opción `-m`. Simplemente ejecuta `git commit` sin más parámetros.
-    1. Ejecutar el comando: En la terminal, escribir:
+    1. **Ejecutar el comando**: En la terminal, escribir:
         ```bash
         git commit
         ```
-    2. 
+    2. **Se abre el editor de texto**: Git abrirá el editor de texto predeterminado (por ejemplo, Vim, Nano, VS Code, etc.). Se verá una pantalla similar a esta, con comentarios que empiezan con `#`:
+        ```bash
+        
+        ```
+
+
 ---
 
 ## 🔗 Referencias
-- [Git Merge vs Rebase vs Squash ¿Qué estrategia debemos elegir?](https://www.youtube.com/watch?v=HlmZLXMOpEM)
+- [Conventional Commits](https://www.conventionalcommits.org)
 
 ---
