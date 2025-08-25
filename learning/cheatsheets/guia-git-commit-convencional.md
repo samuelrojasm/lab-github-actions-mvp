@@ -1,5 +1,7 @@
 # 🧪 Guía de Git Commit Convencional
 
+[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?logo=conventionalcommits&logoColor=white)](https://conventionalcommits.org)
+
 ## ⚙️ Recomendaciones para el mensaje de un git commit
 - Un buen mensaje de git commit es claro, conciso y descriptivo. No solo sirve para entender el cambio que se realizó, sino que también facilita la revisión del código, la depuración y la generación de un historial de cambios legible. Aquí hay algunas recomendaciones clave:
     - **Línea de asunto concisa (máximo 50 caracteres)**: La primera línea debe ser un resumen breve y directo del cambio. No debe ser una frase completa, sino más bien un imperativo: "Corrige bug de autenticación" o "Añade botón de 'me gusta'".
@@ -15,9 +17,7 @@
 - Existe un patrón de facto que se ha popularizado y es seguido por muchas comunidades de código abierto, especialmente la de Linux, la cual es la misma comunidad que desarrolló Git. Este patrón se conoce como **"Conventional Commits"**.
 - El estándar **Conventional Commits** es una especificación ligera sobre cómo escribir mensajes de `commit`. Su objetivo es crear un historial de `commit` explícito, lo que facilita la automatización de herramientas como la generación de `changelogs` y la determinación automática de la versión semántica de un proyecto.
 - El formato básico es:
-`tipo(alcance): descripción`
-`cuerpo del mensaje`
-`pie de página`
+> `tipo(alcance): descripción`<br>`cuerpo del mensaje`<br>`pie de página`
 - A continuación, los elementos clave de este patrón:
     - `tipo`: Es una palabra clave que indica el tipo de cambio. Los más comunes son:
         - `feat`: Un nuevo **feature** o funcionalidad.
@@ -65,7 +65,15 @@
         <p align="center">
             <img src="../../imagenes/vi-commit.png" alt="vi-commit" width="60%">
         </p>
-
+    3. **Escribe el mensaje**:
+        - En la primera línea, escribe el asunto del `commit` (por ejemplo, `feat: Añade un nuevo botón en la página principal`).
+        - Luego, deja una línea en blanco.
+        - En la siguiente línea, escribe el cuerpo del mensaje, explicando el porqué de tu cambio.
+    4. **Guarda y sal del editor**: Una vez escrito el mensaje, guardar el archivo y ciérralo.
+        - En vi, presionar `Esc`, luego escribir `:wq` y presiona `Enter`.
+        - En Nano, presionr `Ctrl + O`, `Enter` y luego `Ctrl + X`.
+> Al hacer esto, Git leerá el mensaje completo (incluyendo el salto de línea y el cuerpo) y lo guardará en el `commit`. De esta manera, el historial de Git se mantendrá claro, descriptivo y fácil de navegar para nosotros y el equipo.
+> Recuerdar que si en algún momento se desea volver a la forma corta para un `commit` rápido, siempre se puede usar `git commit -m "Mensaje simple"`.
 
 ---
 
