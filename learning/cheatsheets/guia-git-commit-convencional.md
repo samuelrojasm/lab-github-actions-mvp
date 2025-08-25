@@ -43,9 +43,15 @@
     - Ejemplo 1:
         > **feat(autenticación)**: Añade inicio de sesión con redes sociales<br><br>Añade la posibilidad de que los usuarios se registren e inicien sesión usando sus cuentas de Google y Facebook. Esto mejora la experiencia del usuario y expande las opciones de registro.
     - Ejemplo 2:
-    > **fix(css)**: Corrige el espaciado de los botones en la barra de navegación<br><br>Se ajustaron los márgenes y el relleno para asegurar que los botones "Inicio" y "Perfil" en la barra de navegación tengan el mismo espaciado, mejorando la consistencia del diseño.
-
-
+        > **fix(css)**: Corrige el espaciado de los botones en la barra de navegación<br><br>Se ajustaron los márgenes y el relleno para asegurar que los botones "Inicio" y "Perfil" en la barra de navegación tengan el mismo espaciado, mejorando la consistencia del 
+        diseño.
+    - Ejemplo 3:
+        > **docs(README)**: Actualiza las instrucciones de instalación<br><br>Se revisaron y actualizaron los pasos para instalar las dependencias del proyecto, incluyendo los comandos correctos para npm.
+    - Ejemplo 4:
+        > **refactor(api)**: Renombra la función `getUsers` a `fetchUsers`<br><br>El nombre `getUsers` no reflejaba adecuadamente la naturaleza asíncrona de la operación. El nuevo nombre, `fetchUsers`, es más descriptivo y coherente con el estilo de nomenclatura del proyecto.
+    - Ejemplo 5:
+        > **chore(deps)**: Actualiza las dependencias de producción a la última versión<br><br>Se actualizó `react-router-dom` a la versión `6.1.1` y `axios` a la versión `0.27.2` para corregir vulnerabilidades de seguridad y aprovechar las nuevas funcionalidades.
+        
 ---
 
 ## 🔗 Referencias
