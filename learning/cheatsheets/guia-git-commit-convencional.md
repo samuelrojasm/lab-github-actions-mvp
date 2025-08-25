@@ -72,8 +72,7 @@
     4. **Guarda y sal del editor**: Una vez escrito el mensaje, guardar el archivo y ciérralo.
         - En vi, presionar `Esc`, luego escribir `:wq` y presiona `Enter`.
         - En Nano, presionr `Ctrl + O`, `Enter` y luego `Ctrl + X`.
-> Al hacer esto, Git leerá el mensaje completo (incluyendo el salto de línea y el cuerpo) y lo guardará en el `commit`. De esta manera, el historial de Git se mantendrá claro, descriptivo y fácil de navegar para nosotros y el equipo.
-> Recuerdar que si en algún momento se desea volver a la forma corta para un `commit` rápido, siempre se puede usar `git commit -m "Mensaje simple"`.
+> Al hacer esto, Git leerá el mensaje completo (incluyendo el salto de línea y el cuerpo) y lo guardará en el `commit`. De esta manera, el historial de Git se mantendrá claro, descriptivo y fácil de navegar para nosotros y el equipo.<br><br>Recordar que si en algún momento se desea volver a la forma corta para un `commit` rápido, siempre se puede usar `git commit -m "Mensaje simple"`.
 
 ---
 
