@@ -10,8 +10,7 @@
 ### 2.Mantener tu rama local actualizada
 - Antes de empezar a trabajar en una nueva funcionalidad o corrección, es crucial que tu rama local `main` esté sincronizada con el repositorio remoto. Esto ayuda a evitar conflictos.
     ```bash
-    git clone <URL_del_repositorio>
-    cd <nombre_del_repositorio>
+    git pull origin main
     ```
 ### 3. Crear una rama de corta duración
 - En el enfoque de Trunk-based, se crean ramas para funcionalidades o correcciones de bugs, pero estas ramas son de corta duración (duración de horas o un día como máximo). El objetivo es que se fusionen con la rama principal lo antes posible. 🚀
