@@ -93,11 +93,11 @@
     - Al usar `-m 1`, le estás diciendo a Git que quieres revertir los cambios de la rama `feature-branch`, dejando intacta la rama main hasta ese punto. Si no especificas el número del padre, Git no sabrá qué parte de la fusión quieres deshacer.
     - `<hash_del_commit>`: Es el identificador del commit de fusión que quieres revertir. Puedes encontrarlo con `git log`.
     - Ejemplo práctico: Supongamos que hiciste un `git merge --no-ff` en la rama `main`, y el commit de fusión tiene el hash `a1b2c3d4`.
-        . Busca el hash del merge commit con `git log`. Verás una línea que dice "Merge: `<padre1> <padre2>`".
+        1. Busca el hash del merge commit con `git log`. Verás una línea que dice "Merge: `<padre1> <padre2>`".
         2. Para deshacer la fusión, ejecuta el siguiente comando:
-        ```bash
-        git revert -m 1 a1b2c3d4
-        ```
+            ```bash
+            git revert -m 1 a1b2c3d4
+            ```
     - Git creará un nuevo commit que revierte todos los cambios que vinieron de la rama de la característica, dejando el historial de la rama `main` sin alterar.
 
 - Alternativa a `git revert` -> `git reset`
