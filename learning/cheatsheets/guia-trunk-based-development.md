@@ -12,6 +12,10 @@
     ```bash
     git pull origin main
     ```
+    <p align="center">
+        <img src="../../imagenes/git-pull-origin-main.png" alt="git-pull-origin-main" width="70%">
+    </p>
+    
 ### 3. Crear una rama de corta duración
 - En el enfoque de Trunk-based, se crean ramas para funcionalidades o correcciones de bugs, pero estas ramas son de corta duración (duración de horas o un día como máximo). El objetivo es que se fusionen con la rama principal lo antes posible. 🚀
     ```bash
