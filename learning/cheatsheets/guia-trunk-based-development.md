@@ -69,7 +69,7 @@
             ```
         - Ejemplo con --no-edit
             <p align="center">
-                <img src="../../imagenes/git-merge-no-edit.png" alt="git-merge-no-edit" width="70%">
+                <img src="../../imagenes/git-merge-no-edit.png" alt="git-merge-no-edit" width="90%">
             </p>
 
         - Mensaje de merge predeterminado:
