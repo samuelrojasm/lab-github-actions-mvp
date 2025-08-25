@@ -42,7 +42,8 @@
     ```bash
     git push --set-upstream origin <nombre-de-la-rama>
     ````
-> Después de ejecutar este comando, Git recordará que tu rama local está vinculada a la rama remota que acabas de crear. A partir de ese momento, podrás usar el simple `git push` para subir tus cambios a esa rama específica.
+
+    > Después de ejecutar este comando, Git recordará que tu rama local está vinculada a la rama remota que acabas de crear. A partir de ese momento, podrás usar el simple `git push` para subir tus cambios a esa rama específica.
 
 ### 5. Fusionar la rama con el tronco principal
 - Una vez que tu trabajo esté completo y revisado (usualmente a través de una **"pull request"** o **"merge request"**), se fusiona con la rama `main`.
@@ -52,7 +53,15 @@
 
     # Luego, fusiona tu rama de funcionalidad
     git merge --no-ff <nombre_de_tu_rama>
-    
+
+    # Par indicarle a Git que no incluya una lista de los commits que se están fusionando en el mensaje de commit predeterminado y evitar que se abre el editor existen estas dos opciones:
+    # 1.- Merge de forma automática
+        git merge --no-ff --no-edit <nombre_de_tu_rama>
+    # 2.- Configuración global (para todos tus proyectos)
+        git config --global merge.log false
+    # En ambos casos Git no abre el editor de texto y usa el mensaje de merge predeterminado que Git genera para un merge commit
+        Merge branch '<nombre_de_la_rama_origen>' into <nombre_de_la_rama_destino>
+
     # O, si prefieres una fusión "squash" para un solo commit
     git merge --squash <nombre_de_tu_rama>
     git commit -m "Descripción de la funcionalidad completa"
