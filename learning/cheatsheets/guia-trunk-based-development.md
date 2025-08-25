@@ -47,50 +47,54 @@
 
 ### 5. Fusionar la rama con el tronco principal
 - Una vez que tu trabajo esté completo y revisado (usualmente a través de una **"pull request"** o **"merge request"**), se fusiona con la rama `main`.
-    - Cambiar a rama principal
+#### Cambiar a rama principal
+- Comando de git:
+    ```bash
+    # Primero, asegúrate de estar en la rama 'main'
+    git checkout main
+    ```
+#### Fusión "no-fast-forward"
+- Tipo de merge no-fast-forward
+    ```bash
+    # Luego, fusiona tu rama de funcionalidad con merge "no-fast-forward"
+    # Abre una editor para adicionar el mensaje del commit
+    git merge --no-ff <nombre_de_tu_rama>
+    ```
+    - Para indicarle a Git que no incluya una lista de los commits que se están fusionando en el mensaje de commit predeterminado y evitar que se abre el editor existen estas dos opciones:
         ```bash
-        # Primero, asegúrate de estar en la rama 'main'
-        git checkout main
+        # 1.- Merge de forma automática:
+        git merge --no-ff --no-edit <nombre_de_tu_rama>
         ```
-    - Fusión "no-fast-forward"
         ```bash
-        # Luego, fusiona tu rama de funcionalidad con merge "no-fast-forward"
-        # Abre una editor para adicionar el mensaje del commit
-        git merge --no-ff <nombre_de_tu_rama>
+        # 2.- Configuración global (para todos tus proyectos):
+        git config --global merge.log false
         ```
-        - Para indicarle a Git que no incluya una lista de los commits que se están fusionando en el mensaje de commit predeterminado y evitar que se abre el editor existen estas dos opciones:
-            ```bash
-            # 1.- Merge de forma automática:
-            git merge --no-ff --no-edit <nombre_de_tu_rama>
-            ```
-            ```bash
-            # 2.- Configuración global (para todos tus proyectos):
-            git config --global merge.log false
-            ```
-        - Ejemplo con --no-edit
-            <p align="center">
-                <img src="../../imagenes/git-merge-no-edit.png" alt="git-merge-no-edit" width="90%">
-            </p>
+    - Ejemplo con --no-edit
+        <p align="center">
+            <img src="../../imagenes/git-merge-no-edit.png" alt="git-merge-no-edit" width="90%">
+        </p>
 
-        - Mensaje de merge predeterminado:
-            ```bash
-            # En ambos casos Git no abre el editor de texto y 
-            # usa el mensaje de merge predeterminado que Git genera para un merge commit:
-            Merge branch '<nombre_de_la_rama_origen>' into <nombre_de_la_rama_destino>
-            ```
-    - Fusión "squash"
+    - Mensaje de merge predeterminado:
         ```bash
-        # También existe la opción de fusión "squash" para un solo commit
-        git merge --squash <nombre_de_tu_rama>
-        git commit -m "Descripción de la funcionalidad completa"
+        # En ambos casos Git no abre el editor de texto y 
+        # usa el mensaje de merge predeterminado que Git genera para un merge commit:
+        Merge branch '<nombre_de_la_rama_origen>' into <nombre_de_la_rama_destino>
         ```
-    - Aplicar los cambios
-        ```bash
-        # Sube el cambio fusionado al repositorio remoto
-        git push origin main
-        ```
-    > La fusión --no-ff (no fast-forward) es a menudo preferida porque crea un commit de fusión explícito, lo que ayuda a mantener un historial claro de los cambios.<br>
-    > El comando `git merge --no-ff` sí crea automáticamente un commit de fusión, por lo que no es necesario ejecutar `git commit` después.
+#### Fusión "squash"
+- Merge tipo "squash"
+    ```bash
+    # También existe la opción de fusión "squash" para un solo commit
+    git merge --squash <nombre_de_tu_rama>
+    git commit -m "Descripción de la funcionalidad completa"
+    ```
+#### Aplicar los cambios
+- Concluir el merge
+    ```bash
+    # Sube el cambio fusionado al repositorio remoto
+    git push origin main
+    ```
+> La fusión --no-ff (no fast-forward) es a menudo preferida porque crea un commit de fusión explícito, lo que ayuda a mantener un historial claro de los cambios.<br>
+> El comando `git merge --no-ff` sí crea automáticamente un commit de fusión, por lo que no es necesario ejecutar `git commit` después.
 
 ### 6. Eliminar la rama de corta duración
 - Una vez que la funcionalidad ha sido fusionada y el código está en el tronco principal, la rama de corta duración ya no es necesaria y se puede eliminar.
