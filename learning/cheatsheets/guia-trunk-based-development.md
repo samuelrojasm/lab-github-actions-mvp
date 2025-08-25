@@ -53,7 +53,7 @@
     ```
 
     ```bash
-    # Luego, fusiona tu rama de funcionalidad
+    # Luego, fusiona tu rama de funcionalidad conun merge "no-fast-forward"
     # Abre una editor para adicionar el mensaje del commit
     git merge --no-ff <nombre_de_tu_rama>
     ```
