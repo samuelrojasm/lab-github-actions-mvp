@@ -125,7 +125,7 @@
         ```bash
         git reset --hard HEAD~1
         ```
-    - Este comando mueve el puntero de la rama `main` un commit atrás, al estado justo antes de la fusión. El `merge commit` desaparecerá del historial.
+    > Este comando mueve el puntero de la rama `main` un commit atrás, al estado justo antes de la fusión. El `merge commit` desaparecerá del historial.
 
 ---
 
