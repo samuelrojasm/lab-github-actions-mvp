@@ -13,14 +13,19 @@
     git pull origin main
     ```
     <p align="center">
-        <img src="../../imagenes/git-pull-origin-main.png" alt="git-pull-origin-main" width="70%">
+        <img src="../../imagenes/git-pull-origin-main.png" alt="git-pull-origin-main" width="60%">
     </p>
-    
+
 ### 3. Crear una rama de corta duración
 - En el enfoque de Trunk-based, se crean ramas para funcionalidades o correcciones de bugs, pero estas ramas son de corta duración (duración de horas o un día como máximo). El objetivo es que se fusionen con la rama principal lo antes posible. 🚀
     ```bash
     git checkout -b <nombre_de_tu_rama>
     ```
+
+    <p align="center">
+        <img src="../../imagenes/ git-checkout.png" alt=" git-checkout" width="60%">
+    </p>
+
 ### 4. Trabajar, hacer "commits" y subir cambios
 - Trabaja en tu funcionalidad, haz commits de forma frecuente y sube tus cambios a la rama remota.
     ```bash
