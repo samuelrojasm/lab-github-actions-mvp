@@ -51,37 +51,52 @@
     # Primero, asegúrate de estar en la rama 'main'
     git checkout main
     ```
-
-    ```bash
-    # Luego, fusiona tu rama de funcionalidad conun merge "no-fast-forward"
-    # Abre una editor para adicionar el mensaje del commit
-    git merge --no-ff <nombre_de_tu_rama>
-    ```
-
-    Par indicarle a Git que no incluya una lista de los commits que se están fusionando en el mensaje de commit predeterminado y evitar que se abre el editor existen estas dos opciones:
+    - Fusión no-fast-forward
+        ```bash
+        # Luego, fusiona tu rama de funcionalidad con merge "no-fast-forward"
+        # Abre una editor para adicionar el mensaje del commit
+        git merge --no-ff <nombre_de_tu_rama>
+        ```
+        
+        Para indicarle a Git que no incluya una lista de los commits que se están fusionando en el mensaje de commit predeterminado y evitar que se abre el editor existen estas dos opciones:
     
-    ```bash
-    # 1.- Merge de forma automática:
+        ```bash
+        # 1.- Merge de forma automática:
         git merge --no-ff --no-edit <nombre_de_tu_rama>
+        ```
 
-    # 2.- Configuración global (para todos tus proyectos):
+        ```bash
+        # 2.- Configuración global (para todos tus proyectos):
         git config --global merge.log false
+        ```
 
-    # En ambos casos Git no abre el editor de texto y 
-    # usa el mensaje de merge predeterminado que Git genera para un merge commit:
-        Merge branch '<nombre_de_la_rama_origen>' into <nombre_de_la_rama_destino>
-    ```
+        Ejemplo con `--no-edit`
 
-    ```bash
-    # O, si prefieres una fusión "squash" para un solo commit
-    git merge --squash <nombre_de_tu_rama>
-    git commit -m "Descripción de la funcionalidad completa"
-    ```
+            <p align="center">
+                <img src="../../imagenes/git-merge-no-edit.png" alt="git-merge-no-edit" width="40%">
+            </p>
+ 
+        Mensaje de merge predeterminado:
 
-    ```bash
-    # Sube el cambio fusionado al repositorio remoto
-    git push origin main
-    ```
+        ```bash
+        # En ambos casos Git no abre el editor de texto y 
+        # usa el mensaje de merge predeterminado que Git genera para un merge commit:
+            Merge branch '<nombre_de_la_rama_origen>' into <nombre_de_la_rama_destino>
+        ```
+
+    - Fusión "squash"
+        ```bash
+        # O, si prefieres una fusión "squash" para un solo commit
+        git merge --squash <nombre_de_tu_rama>
+        git commit -m "Descripción de la funcionalidad completa"
+        ```
+    
+    - Aplicar los cambios
+
+        ```bash
+        # Sube el cambio fusionado al repositorio remoto
+        git push origin main
+        ```
 
     > La fusión --no-ff (no fast-forward) es a menudo preferida porque crea un commit de fusión explícito, lo que ayuda a mantener un historial claro de los cambios.<br>
     > El comando `git merge --no-ff` sí crea automáticamente un commit de fusión, por lo que no es necesario ejecutar `git commit` después.
