@@ -160,6 +160,32 @@ gitGraph
 
 ---
 
+## ⚙️ Diagrama de un merge squash
+- Un `merge squash` tiene un historial de `commits` diferente. En lugar de crear un `commit` de fusión, toma todos los cambios de una rama y los comprime en un único `commit` que se aplica sobre la rama principal.
+
+```mermaid
+gitGraph
+  commit id: "C1"
+  commit id: "C2"
+  branch feature
+  checkout feature
+  commit id: "C3"
+  commit id: "C4"
+  checkout main
+  commit id: "C5"
+  commit id: "C6" tag: "Merge Squash"
+```
+
+- Explicación del diagrama
+1. `C1` y `C2`: Son los `commits` iniciales en la rama `main` (el tronco principal).
+2. `C3` y `C4`: Son los `commits` que hiciste en la rama de la funcionalidad (`feature`). En este punto, el historial de `main` y `feature` se han bifurcado.
+3. `C5`: Un nuevo `commit` en la rama `main` que se realizó mientras trabajabas en la rama `feature`.
+4. `C6`: Aquí es donde sucede el `merge squash`. En lugar de fusionar `C3` y `C4` de forma individual (como en un `merge --no-ff`), Git toma todos los cambios de ambos `commits` y los agrupa en un solo `commit` nuevo (`C6`) que se agrega al final del historial de la rama `main`.
+
+- La principal diferencia visual es que no hay una línea de fusión que conecte la rama `feature` con la rama `main`, ya que el `squash` crea un historial lineal, como si todos los cambios se hubieran hecho en un único `commit` sobre la rama principal.
+
+---
+
 ## ⚙️ ¿Cómo se ejecuta el deshacer los cambios de un no-fast-forward?
 - Para deshacer un **"merge no-fast-forward"** de forma segura, el comando más recomendado es `git revert`. 
 - Este método es ideal para ramas que ya han sido compartidas con otros, ya que no reescribe el historial del repositorio.
