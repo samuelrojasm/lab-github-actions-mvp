@@ -112,10 +112,18 @@ Una vez que tu trabajo esté completo y revisado (usualmente a través de una **
 ---
 
 ## ⚙️ ¿Cómo funciona git merge --no-ff?
-- Cuando Git realiza un **"fast-forward merge"** (fusión de avance rápido), simplemente mueve el puntero de la rama `main` a la última confirmación de la rama de la característica, sin crear un nuevo commit. Esto ocurre solo si la rama `main` no ha tenido nuevos commits desde que se creó la rama de la característica.
+### Primero veamos lo que es un `fast-forward` (avance rápido):
+- Cuando Git realiza un **"fast-forward merge"** (fusión de avance rápido), simplemente mueve el puntero de la rama `main` a la última confirmación de la rama de la característica, sin crear un nuevo commit.
+- Una fusión `fast-forward` ocurre cuando una rama se puede mover hacia adelante para incluir los nuevos `commits` de otra rama sin bifurcación.
+- Esto ocurre solo si la rama `main` no ha tenido nuevos commits desde que se creó la rama de la característica.
+
+### Fusión`no-fast-forward`
 - Sin embargo, al usar el comando **git merge --no-ff**, estás forzando a Git a crear un commit de fusión  de forma explícita, incluso si pudiera realizar un "fast-forward". Este commit de fusión es importante porque:
-    - **Preserva el historial:** Mantiene un registro de que una rama de característica se fusionó con la rama principal. Esto es útil para auditar el historial de cambios y entender de dónde provienen las funcionalidades.
+    - **Preserva el historial:** Mantiene un registro de que una rama de característica se fusionó con la rama principal. Esto es útil para auditar el historial de cambios y entender de dónde provienen las funcionalidades. Un historial con una línea de fusión que muestra cuándo y dónde se unió la otra rama.
     - **Permite deshacer:** Si necesitas revertir un cambio grande de una característica, puedes revertir un solo commit (el commit de fusión), en lugar de tener que deshacer varios commits de forma individual.
+    - **Uso:** Es la práctica más común en un flujo de trabajo de **Trunk-based Development**, ya que cada fusión se convierte en un hito claro en el historial.
+- La expresión `no-fast-forward` en Git significa que la fusión de dos ramas no se realizará de manera lineal, sino que se creará un nuevo `commit` que une los historiales de ambas.
+- Al usar `git merge --no-ff`, le dices a Git que evite el avance rápido. En su lugar, Git creará un `merge commit` explícito que tiene dos padres: el último `commit` de la rama de destino y el último `commit` de la rama que se está fusionando.
 
 ---
 
@@ -183,6 +191,21 @@ gitGraph
 4. `C6`: Aquí es donde sucede el `merge squash`. En lugar de fusionar `C3` y `C4` de forma individual (como en un `merge --no-ff`), Git toma todos los cambios de ambos `commits` y los agrupa en un solo `commit` nuevo (`C6`) que se agrega al final del historial de la rama `main`.
 
 - La principal diferencia visual es que no hay una línea de fusión que conecte la rama `feature` con la rama `main`, ya que el `squash` crea un historial lineal, como si todos los cambios se hubieran hecho en un único `commit` sobre la rama principal.
+
+---
+
+## ⚙️ Diagrama de un merge fast-forward
+- Una fusión `fast-forward` ocurre cuando una rama se puede mover hacia adelante para incluir los nuevos `commits` de otra rama sin bifurcación. Esto solo es posible si no ha habido nuevos commits en la rama de destino. Git simplemente mueve el puntero de la rama hacia adelante.
+
+```mermaid
+gitGraph
+  commit id: "A"
+  commit id: "B"
+  branch feature
+  commit id: "C"
+  checkout main
+  merge feature
+```
 
 ---
 
