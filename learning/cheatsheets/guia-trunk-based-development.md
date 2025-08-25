@@ -23,7 +23,7 @@
     ```
 
     <p align="center">
-        <img src="../../imagenes/git-checkout.png" alt="git-checkout" width="50%">
+        <img src="../../imagenes/git-checkout.png" alt="git-checkout" width="40%">
     </p>
 
 ### 4. Trabajar, hacer "commits" y subir cambios
