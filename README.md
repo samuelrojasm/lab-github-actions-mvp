@@ -1,5 +1,7 @@
 # 🧪 Lab Personal:  MVP de Github Actions 
 
+[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?logo=conventionalcommits&logoColor=white)](https://conventionalcommits.org)
+
 ¡Bienvenido a mi **laboratorio personal**! 🚀
 Este repo es un espacio para **experimentar y aprender** sobre `Git Hub Actions`.
 Aquí guardo pruebas, errores, descubrimientos y notas de aprendizaje, sin preocuparme por que todo sea perfecto. 😅
