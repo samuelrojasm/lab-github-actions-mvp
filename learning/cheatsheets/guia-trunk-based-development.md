@@ -54,17 +54,21 @@
 
     ```bash
     # Luego, fusiona tu rama de funcionalidad
+    # Abre una editor para adicionar el mensaje del commit
     git merge --no-ff <nombre_de_tu_rama>
     ```
 
-    - Par indicarle a Git que no incluya una lista de los commits que se están fusionando en el mensaje de commit predeterminado y evitar que se abre el editor existen estas dos opciones:
+    Par indicarle a Git que no incluya una lista de los commits que se están fusionando en el mensaje de commit predeterminado y evitar que se abre el editor existen estas dos opciones:
     
     ```bash
-    # 1.- Merge de forma automática
+    # 1.- Merge de forma automática:
         git merge --no-ff --no-edit <nombre_de_tu_rama>
-    # 2.- Configuración global (para todos tus proyectos)
+
+    # 2.- Configuración global (para todos tus proyectos):
         git config --global merge.log false
-    # En ambos casos Git no abre el editor de texto y usa el mensaje de merge predeterminado que Git genera para un merge commit
+
+    # En ambos casos Git no abre el editor de texto y 
+    # usa el mensaje de merge predeterminado que Git genera para un merge commit:
         Merge branch '<nombre_de_la_rama_origen>' into <nombre_de_la_rama_destino>
     ```
 
