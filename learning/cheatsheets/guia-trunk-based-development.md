@@ -182,6 +182,15 @@ gitGraph
   merge feature tag: "Merge --no-ff"
 ```
 
+- Explicación del diagrama
+    1. C1 y C2: Estos son los commits iniciales en la rama main (tronco principal).
+    2. branch feature: Se crea una nueva rama de corta duración llamada feature.
+    3. checkout feature: Cambias a la rama feature para trabajar.
+    4. C3 y C4: Se crean nuevos commits en la rama feature. En este punto, el historial de main y feature se han bifurcado.
+    5. checkout main: Vuelves a la rama main para realizar la fusión.
+    6. C5: En un escenario de Trunk-based Development, alguien más pudo haber hecho un commit en la rama main mientras tú trabajabas en la rama feature.
+    7. merge feature: Aquí es donde ocurre la fusión. El merge --no-ff crea un nuevo commit de fusión que une los historiales de ambas ramas. El historial se convierte en un grafo, lo que muestra explícitamente la fusión. El tag: "Merge --no-ff" marca el commit de fusión para una mejor visualización.
+
 ---
 ## 🔗 Referencias
 - [Git Merge vs Rebase vs Squash ¿Qué estrategia debemos elegir?](https://www.youtube.com/watch?v=HlmZLXMOpEM)
