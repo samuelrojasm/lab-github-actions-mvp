@@ -51,7 +51,17 @@
         > **refactor(api)**: Renombra la función `getUsers` a `fetchUsers`<br><br>El nombre `getUsers` no reflejaba adecuadamente la naturaleza asíncrona de la operación. El nuevo nombre, `fetchUsers`, es más descriptivo y coherente con el estilo de nomenclatura del proyecto.
     - Ejemplo 5:
         > **chore(deps)**: Actualiza las dependencias de producción a la última versión<br><br>Se actualizó `react-router-dom` a la versión `6.1.1` y `axios` a la versión `0.27.2` para corregir vulnerabilidades de seguridad y aprovechar las nuevas funcionalidades.
-        
+
+---
+
+## ⚙️ Paso a paso para un commit completo
+- La sintaxis de `git commit -m` solo te permite escribir una línea de mensaje, lo cual es ideal para mensajes simples. Sin embargo, para incluir un cuerpo de mensaje y dejar la línea en blanco, se usa un método diferente.
+- La forma correcta de hacerlo desde la línea de comandos es no usar la opción `-m`. Simplemente ejecuta `git commit` sin más parámetros.
+    1. Ejecutar el comando: En la terminal, escribir:
+        ```bash
+        git commit
+        ```
+    2. 
 ---
 
 ## 🔗 Referencias
