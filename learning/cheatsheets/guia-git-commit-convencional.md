@@ -72,11 +72,36 @@
     4. **Guarda y sal del editor**: Una vez escrito el mensaje, guardar el archivo y ciérralo.
         - En vi, presionar `Esc`, luego escribir `:wq` y presiona `Enter`.
         - En Nano, presionr `Ctrl + O`, `Enter` y luego `Ctrl + X`.
-> Al hacer esto, Git leerá el mensaje completo (incluyendo el salto de línea y el cuerpo) y lo guardará en el `commit`. De esta manera, el historial de Git se mantendrá claro, descriptivo y fácil de navegar para nosotros y el equipo.<br><br>Recordar que si en algún momento se desea volver a la forma corta para un `commit` rápido, siempre se puede usar `git commit -m "Mensaje simple"`.
+    > Al hacer esto, Git leerá el mensaje completo (incluyendo el salto de línea y el cuerpo) y lo guardará en el `commit`. De esta manera, el historial de Git se mantendrá claro, descriptivo y fácil de navegar para nosotros y el equipo.<br><br>Recordar que si en algún momento se desea volver a la forma corta para un `commit` rápido, siempre se puede usar `git commit -m "Mensaje simple"`.
+
+---
+
+## ⚙️ Práctica común de uso de mensajes git commit 
+-  La preferencia y la práctica común se pueden deducir por los siguientes factores:
+### `git commit -m` es la más usada para commits pequeños y rápidos
+- La sintaxis `git commit -m` es extremadamente común para cambios menores, como correcciones de errores tipográficos, ajustes de formato, o cualquier cosa que no requiera una explicación detallada. Es la forma más rápida y directa de hacer un commit.
+    - **Ventaja**: Rapidez y conveniencia.
+    - **Contexto de uso**: Proyectos personales, correcciones rápidas, `commits` que no afectan la lógica principal.
+### `git commit` (sin `-m`) es la práctica recomendada para `commits` significativos
+- La comunidad de desarrollo, especialmente en proyectos de código abierto y en entornos de trabajo profesional, prioriza un historial de `commit` legible y detallado. El uso de `git commit` sin `-m` (que abre el editor) es la forma estándar de lograrlo.
+    - **Ventaja**: Permite crear mensajes de `commit` completos y descriptivos, con un asunto, un cuerpo y un pie de página. Esto es crucial para la revisión de código, la depuración y la generación automática de registros de cambios (changelogs).
+    - **Contexto de uso**: Nuevas funcionalidades, refactorizaciones, correcciones de errores complejos, cambios que impactan a otros desarrolladores.
+### Conclusión
+- No es una cuestión de "una u otra", sino de contexto. La mayoría de los desarrolladores usan ambas herramientas, pero con propósitos distintos:
+    - Se inclinan por `git commit -m` para commits simples, rápidos y de una sola línea.
+    - Utilizan `git commit` (sin la opción `-m`) para commits que necesitan una explicación más detallada.
+> En el desarrollo profesional y en proyectos que siguen estándares como **"Conventional Commits"**, la práctica de escribir un mensaje de `commit` completo (con asunto y cuerpo) usando el editor es considerada una buena práctica fundamental. El mensaje de `commit` es un registro permanente de por qué se hizo un cambio, y para los cambios significativos, ese "por qué" es tan importante como el "qué".
+## ⚙️  Registrar el commit inicial de un proyecto
+- El mensaje `chore: init` se usa para registrar el `commit` inicial de un proyecto, indicando que se trata de una tarea de configuración (un `chore`) y no de una funcionalidad o corrección. Es una forma estandarizada de decir: "Este es el primer `commit` del proyecto con la configuración inicial".
+- Este mensaje específico indica dos cosas:
+    - `chore`: Este es el **tipo** de cambio. Según la convención, `chore` se usa para cambios en el proceso de construcción, herramientas auxiliares o librerías que no modifican el código de producción. Un `commit` de tipo `chore` no arregla un bug ni añade una nueva funcionalidad.
+    - `init`: Esta es la **descripción** del cambio. En este contexto, `init` es la abreviatura de "initialize" (inicializar), lo que significa que este es el primer `commit` del proyecto. A menudo, se utiliza para guardar el esqueleto inicial del proyecto, como la configuración, un archivo README, o la estructura básica de carpetas.
+-  En resumen, el mensaje `chore: init` se usa para registrar el **commit inicial de un proyecto**, indicando que se trata de una tarea de configuración (un `chore`) y no de una funcionalidad o corrección. Es una forma estandarizada de decir: "Este es el primer `commit` del proyecto con la configuración inicial".
 
 ---
 
 ## 🔗 Referencias
 - [Conventional Commits](https://www.conventionalcommits.org)
+- [GitHub Conventional Commits](https://github.com/conventional-commits/conventionalcommits.org)
 
 ---
