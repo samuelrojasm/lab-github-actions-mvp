@@ -23,6 +23,26 @@
         - `feat`: Un nuevo **feature** o funcionalidad.
         - `fix`: Una corrección de un **bug**.
         - `docs`: Cambios en la documentación.
+        - `style`: Cambios que no afectan la lógica del código (formato, espacios, etc.).
+        - `refactor`: Un cambio de código que no añade funcionalidades ni corrige errores.
+        - `test`: Añadir o modificar tests.
+        - `chore`: Cambios en la configuración de la construcción o tareas repetitivas.
+    - `(alcance)`: Opcional. Indica la parte del código que se modificó. Por ejemplo, `feat(autenticación)`.
+    - `descripción`: La descripción corta y concisa, siguiendo las mismas reglas de la línea de asunto.
+    - `cuerpo`: (Opcional) Un cuerpo detallado que explica el cambio.
+    - `BREAKING CHANGE`: Una nota especial en el pie de página para indicar un cambio que rompe la compatibilidad (API) y que requiere una nueva versión mayor según el versionado semántico.
+- El uso de **Conventional Commits** no solo estandariza el historial de commit, sino que también permite el uso de herramientas automatizadas para:
+    - **Generar automáticamente archivos** `CHANGELOG`: Un registro de cambios del proyecto.
+    - **Determinar automáticamente la próxima versión del proyecto**: Si hay un `feat`, podría ser un `minor release`, si hay un `fix`, un `patch release`, y si hay un `BREAKING CHANGE`, un `major release`.
+    - **Facilitar la búsqueda de cambios específicos**: Permite filtrar commits por tipo o alcance de manera sencilla.
+
+---
+
+## ⚙️ Ejemplos
+- Ejemplos de mensajes de `git commit` siguiendo el patrón **Conventional Commits** y las mejores prácticas.
+> **feat(autenticación)**: Añade inicio de sesión con redes sociales
+> Añade la posibilidad de que los usuarios se registren e inicien sesión usando sus cuentas de Google y Facebook. Esto mejora la experiencia del usuario y expande las opciones de registro.
+
 
 ---
 
