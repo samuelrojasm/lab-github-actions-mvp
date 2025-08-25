@@ -53,7 +53,7 @@
     # Eliminar la rama remota
     git push origin --delete <nombre_de_tu_rama>
     ```
-    
+
 ---
 
 ## ⚙️ ¿Cómo funciona git merge --no-ff?
@@ -68,7 +68,47 @@
 - La opción `--squash` tiene un comportamiento diferente.
     - `git merge --squash`: Combina todos los commits de la rama de la característica en un solo commit. Después de ejecutar este comando, Git deja los cambios listos en tu área de preparación, pero no los confirma. Por lo tanto, sí necesitas ejecutar un `git commit` manualmente después para finalizar la fusión.
     - En resumen:
-    |           |               |
-    |:----------|:--------------|
+
+    | Comando|Crea un commit de forma automática|
+    |:-------|:--------------|
+    |`git merge --no-ff`|Sí|
+    |`git merge --squash`|No (requiere `git commit` posterior)|
+
+> El comando `--no-ff` es el más utilizado en un flujo de trabajo de **Trunk-based Development** porque ayuda a mantener un historial claro y auditable de las fusiones.
 
 ---
+
+## ⚙️ ¿Cómo se ejecuta el deshacer los cambios de un no-fast-forward?
+- Para deshacer un **"merge no-fast-forward"** de forma segura, el comando más recomendado es `git revert`. 
+- Este método es ideal para ramas que ya han sido compartidas con otros, ya que no reescribe el historial del repositorio.
+- El comando para revertir un merge commit es:
+    ```bash
+    git revert -m <numero_del_padre> <hash_del_commit>
+    ```
+- ¿Cómo funciona el comando?
+    - `git revert`: Este comando no borra el commit original. En su lugar, crea un nuevo commit que aplica los cambios inversos. Es como si agregaras un nuevo commit que desactiva todos los cambios que se hicieron en la fusión. Esto mantiene un historial limpio y seguro para todos los colaboradores.
+    - `-m <numero_del_padre>`: La opción `-m` (mainline) es obligatoria cuando reviertes un commit de fusión. Un merge commit tiene dos o más "padres", es decir, de dónde provienen los cambios. El `--no-ff` tiene dos:
+        1. El primer padre (`-m 1`) es la rama a la que se fusionó (por ejemplo, `main`).
+        2. El segundo padre (`-m 2`) es la rama que se fusionó (por ejemplo, `feature-branch`).
+    - Al usar `-m 1`, le estás diciendo a Git que quieres revertir los cambios de la rama `feature-branch`, dejando intacta la rama main hasta ese punto. Si no especificas el número del padre, Git no sabrá qué parte de la fusión quieres deshacer.
+    - `<hash_del_commit>`: Es el identificador del commit de fusión que quieres revertir. Puedes encontrarlo con `git log`.
+    - Ejemplo práctico: Supongamos que hiciste un `git merge --no-ff` en la rama `main`, y el commit de fusión tiene el hash `a1b2c3d4`.
+        . Busca el hash del merge commit con `git log`. Verás una línea que dice "Merge: `<padre1> <padre2>`".
+        2. Para deshacer la fusión, ejecuta el siguiente comando:
+        ```bash
+        git revert -m 1 a1b2c3d4
+        ```
+    - Git creará un nuevo commit que revierte todos los cambios que vinieron de la rama de la característica, dejando el historial de la rama `main` sin alterar.
+
+- Alternativa a `git revert` -> `git reset`
+    - Si la fusión aún no se ha subido al repositorio remoto y no ha sido compartida, puedes usar `git reset`. 
+    - Este comando sí reescribe el historial y es más directo. Sin embargo, su uso en ramas compartidas puede causar problemas a otros desarrolladores.
+    - El comando sería:
+        ```bash
+        git reset --hard HEAD~1
+        ```
+    - Este comando mueve el puntero de la rama `main` un commit atrás, al estado justo antes de la fusión. El `merge commit` desaparecerá del historial.
+
+---
+
+
