@@ -133,6 +133,33 @@ Una vez que tu trabajo esté completo y revisado (usualmente a través de una **
 
 ---
 
+## ⚙️ Diagrama de un merge no-fast-forward
+- Este diagrama ilustra cómo se ve el historial de Git antes y después de la fusión, mostrando claramente el `merge commit` que crea `git merge --no-ff`.
+
+```mermaid
+gitGraph
+  commit id: "C1"
+  commit id: "C2"
+  branch feature
+  checkout feature
+  commit id: "C3"
+  commit id: "C4"
+  checkout main
+  commit id: "C5"
+  merge feature tag: "Merge --no-ff"
+```
+
+- Explicación del diagrama
+1. C1 y C2: Estos son los commits iniciales en la rama main (tronco principal).
+2. branch feature: Se crea una nueva rama de corta duración llamada feature.
+3. checkout feature: Cambias a la rama feature para trabajar.
+4. C3 y C4: Se crean nuevos commits en la rama feature. En este punto, el historial de main y feature se han bifurcado.
+5. checkout main: Vuelves a la rama main para realizar la fusión.
+6. C5: En un escenario de Trunk-based Development, alguien más pudo haber hecho un commit en la rama main mientras tú trabajabas en la rama feature.
+7. merge feature: Aquí es donde ocurre la fusión. El merge --no-ff crea un nuevo commit de fusión que une los historiales de ambas ramas. El historial se convierte en un grafo, lo que muestra explícitamente la fusión. El tag: "Merge --no-ff" marca el commit de fusión para una mejor visualización.
+
+---
+
 ## ⚙️ ¿Cómo se ejecuta el deshacer los cambios de un no-fast-forward?
 - Para deshacer un **"merge no-fast-forward"** de forma segura, el comando más recomendado es `git revert`. 
 - Este método es ideal para ramas que ya han sido compartidas con otros, ya que no reescribe el historial del repositorio.
@@ -163,33 +190,6 @@ Una vez que tu trabajo esté completo y revisado (usualmente a través de una **
         git reset --hard HEAD~1
         ```
     > Este comando mueve el puntero de la rama `main` un commit atrás, al estado justo antes de la fusión. El `merge commit` desaparecerá del historial.
-
----
-
-## ⚙️ Diagrama de un merge no-fast-forward
-- Este diagrama ilustra cómo se ve el historial de Git antes y después de la fusión, mostrando claramente el `merge commit` que crea `git merge --no-ff`.
-
-```mermaid
-gitGraph
-  commit id: "C1"
-  commit id: "C2"
-  branch feature
-  checkout feature
-  commit id: "C3"
-  commit id: "C4"
-  checkout main
-  commit id: "C5"
-  merge feature tag: "Merge --no-ff"
-```
-
-- Explicación del diagrama
-1. C1 y C2: Estos son los commits iniciales en la rama main (tronco principal).
-2. branch feature: Se crea una nueva rama de corta duración llamada feature.
-3. checkout feature: Cambias a la rama feature para trabajar.
-4. C3 y C4: Se crean nuevos commits en la rama feature. En este punto, el historial de main y feature se han bifurcado.
-    5. checkout main: Vuelves a la rama main para realizar la fusión.
-    6. C5: En un escenario de Trunk-based Development, alguien más pudo haber hecho un commit en la rama main mientras tú trabajabas en la rama feature.
-    7. merge feature: Aquí es donde ocurre la fusión. El merge --no-ff crea un nuevo commit de fusión que une los historiales de ambas ramas. El historial se convierte en un grafo, lo que muestra explícitamente la fusión. El tag: "Merge --no-ff" marca el commit de fusión para una mejor visualización.
 
 ---
 ## 🔗 Referencias
