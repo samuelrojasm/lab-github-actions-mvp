@@ -13,14 +13,23 @@
     git pull origin main
     ```
     <p align="center">
-        <img src="../../imagenes/git-pull-origin-main.png" alt="git-pull-origin-main" width="70%">
+        <img src="../../imagenes/git-pull-origin-main.png" alt="git-pull-origin-main" width="60%">
     </p>
-    
+
 ### 3. Crear una rama de corta duración
 - En el enfoque de Trunk-based, se crean ramas para funcionalidades o correcciones de bugs, pero estas ramas son de corta duración (duración de horas o un día como máximo). El objetivo es que se fusionen con la rama principal lo antes posible. 🚀
     ```bash
     git checkout -b <nombre_de_tu_rama>
     ```
+
+    <p align="center">
+        <img src="../../imagenes/git-checkout.png" alt="git-checkout" width="40%">
+    </p>
+
+- El comando `git checkout -b` se usa para crear y cambiar a una nueva rama de Git en un solo paso. Es una abreviación de dos comandos:
+    1. `git branch <nombre-de-la-rama>`: crea una nueva rama.
+    2. `git checkout <nombre-de-la-rama>`: cambia a esa nueva rama.
+
 ### 4. Trabajar, hacer "commits" y subir cambios
 - Trabaja en tu funcionalidad, haz commits de forma frecuente y sube tus cambios a la rama remota.
     ```bash
@@ -29,6 +38,12 @@
     git commit -m "Descripción clara de tu cambio"
     git push origin <nombre_de_tu_rama>
     ```
+- Para subir una nueva rama local a GitHub y que se cree en el repositorio remoto, debes usar el comando `git push`. La primera vez que lo haces, es una buena práctica usar la opción `--set-upstream` (o su versión corta `-u`), para que Git asocie tu rama local con la nueva rama remota. El comando completo es:
+    ```bash
+    git push --set-upstream origin <nombre-de-la-rama>
+    ````
+> Después de ejecutar este comando, Git recordará que tu rama local está vinculada a la rama remota que acabas de crear. A partir de ese momento, podrás usar el simple `git push` para subir tus cambios a esa rama específica.
+
 ### 5. Fusionar la rama con el tronco principal
 - Una vez que tu trabajo esté completo y revisado (usualmente a través de una **"pull request"** o **"merge request"**), se fusiona con la rama `main`.
     ```bash
@@ -110,8 +125,11 @@
         ```bash
         git reset --hard HEAD~1
         ```
-    - Este comando mueve el puntero de la rama `main` un commit atrás, al estado justo antes de la fusión. El `merge commit` desaparecerá del historial.
+    > Este comando mueve el puntero de la rama `main` un commit atrás, al estado justo antes de la fusión. El `merge commit` desaparecerá del historial.
 
 ---
 
+## 🔗 Referencias
+- [Git Merge vs Rebase vs Squash ¿Qué estrategia debemos elegir?](https://www.youtube.com/watch?v=HlmZLXMOpEM)
 
+---
