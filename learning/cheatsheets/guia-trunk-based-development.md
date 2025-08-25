@@ -70,11 +70,11 @@
         git config --global merge.log false
         ```
 
-        Ejemplo con `--no-edit`
+        Ejemplo con --no-edit
 
-            <p align="center">
-                <img src="../../imagenes/git-merge-no-edit.png" alt="git-merge-no-edit" width="40%">
-            </p>
+     <p align="center">
+        <img src="../../imagenes/git-merge-no-edit.png" alt="git-merge-no-edit" width="40%">
+    </p>
  
         Mensaje de merge predeterminado:
 
@@ -86,13 +86,12 @@
 
     - Fusión "squash"
         ```bash
-        # O, si prefieres una fusión "squash" para un solo commit
+        # También existe la opción de fusión "squash" para un solo commit
         git merge --squash <nombre_de_tu_rama>
         git commit -m "Descripción de la funcionalidad completa"
         ```
     
     - Aplicar los cambios
-
         ```bash
         # Sube el cambio fusionado al repositorio remoto
         git push origin main
