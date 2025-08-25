@@ -129,4 +129,7 @@
 
 ---
 
+## 🔗 Referencias
+- [Git Merge vs Rebase vs Squash ¿Qué estrategia debemos elegir?](https://www.youtube.com/watch?v=HlmZLXMOpEM)
 
+---
