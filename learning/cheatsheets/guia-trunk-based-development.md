@@ -166,6 +166,23 @@ Una vez que tu trabajo esté completo y revisado (usualmente a través de una **
 
 ---
 
+## ⚙️ Diagrama de un merge no-fast-forward
+- Este diagrama ilustra cómo se ve el historial de Git antes y después de la fusión, mostrando claramente el `merge commit` que crea `git merge --no-ff`.
+
+```mermaid
+gitGraph
+  commit id: "C1"
+  commit id: "C2"
+  branch feature
+  checkout feature
+  commit id: "C3"
+  commit id: "C4"
+  checkout main
+  commit id: "C5"
+  merge feature tag: "Merge --no-ff"
+```
+
+---
 ## 🔗 Referencias
 - [Git Merge vs Rebase vs Squash ¿Qué estrategia debemos elegir?](https://www.youtube.com/watch?v=HlmZLXMOpEM)
 
