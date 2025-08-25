@@ -40,9 +40,9 @@
 
 ## ⚙️ Ejemplos
 - Ejemplos de mensajes de `git commit` siguiendo el patrón **Conventional Commits** y las mejores prácticas.
-> **feat(autenticación)**: Añade inicio de sesión con redes sociales<br>Añade la posibilidad de que los usuarios se registren e inicien sesión usando sus cuentas de Google y Facebook. Esto mejora la experiencia del usuario y expande las opciones de registro.
+> **feat(autenticación)**: Añade inicio de sesión con redes sociales<br><br>Añade la posibilidad de que los usuarios se registren e inicien sesión usando sus cuentas de Google y Facebook. Esto mejora la experiencia del usuario y expande las opciones de registro.
 
-s
+> **fix(css)**: Corrige el espaciado de los botones en la barra de navegación<br><br>Se ajustaron los márgenes y el relleno para asegurar que los botones "Inicio" y "Perfil" en la barra de navegación tengan el mismo espaciado, mejorando la consistencia del diseño.
 
 
 ---
