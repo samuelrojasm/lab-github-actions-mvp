@@ -62,9 +62,9 @@
         git commit
         ```
     2. **Se abre el editor de texto**: Git abrirá el editor de texto predeterminado (por ejemplo, Vim, Nano, VS Code, etc.). Se verá una pantalla similar a esta, con comentarios que empiezan con `#`:
-        ```bash
-        
-        ```
+        <p align="center">
+            <img src="../../imagenes/vi-commit.png" alt="vi-commit" width="60%">
+        </p>
 
 
 ---
